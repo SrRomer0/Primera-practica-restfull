@@ -16,8 +16,7 @@ public class CreateProductoUseCase {
                 .precio(comando.precio())
                 .createdAt(LocalDateTime.now()).build();
 
-        // TODO Faltaría la lógica sobre el producto, por ejemplo, almacenarlo en una
-        // base de datos.
+        // TODO Faltaría la lógica sobre el producto, por ejemplo, almacenarlo en una base de datos.
         return producto;
 
     }
