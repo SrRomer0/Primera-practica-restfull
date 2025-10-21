@@ -1,9 +1,5 @@
 package es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.mapper;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
 import es.etg.daw.dawes.java.rest.restfull.productos.application.command.CreateProductoCommand;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.command.EditProductoCommand;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.Producto;
