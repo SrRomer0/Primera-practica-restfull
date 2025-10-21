@@ -11,17 +11,18 @@ import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.CreateP
 import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.DeleteProductoUseCase;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.EditProductoUseCase;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.FindProductoUseCase;
-import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.db.repository.mock.ProductoRepositoryMockImpl;
+import es.etg.daw.dawes.java.rest.restfull.productos.domain.repository.ProductoRepository;
 import lombok.RequiredArgsConstructor;
 
 @Configuration
 @RequiredArgsConstructor
 public class ProductoConfig {
 
-    // Para el POST
+    private final ProductoRepository productoRepository;
+
     @Bean
     public CreateProductoUseCase createProductoUseCase() {
-        return new CreateProductoUseCase(new ProductoRepositoryMockImpl());
+        return new CreateProductoUseCase(productoRepository);
     }
 
     @Bean
@@ -29,10 +30,9 @@ public class ProductoConfig {
         return new CreateProductoService(createProductoUseCase());
     }
 
-    // Para el GET
     @Bean
     public FindProductoUseCase findProductoUseCase() {
-        return new FindProductoUseCase();
+        return new FindProductoUseCase(productoRepository);
     }
 
     @Bean
@@ -40,25 +40,23 @@ public class ProductoConfig {
         return new FindProductoService(findProductoUseCase());
     }
 
-    // Para el DELETE
     @Bean
     public DeleteProductoUseCase deleteProductoUseCase() {
-        return new DeleteProductoUseCase();
+        return new DeleteProductoUseCase(productoRepository);
     }
 
     @Bean
     public DeleteProductoService deleteProductoService() {
-        return new DeleteProductoService();
-    }
-
-    // Para el PUT
-    @Bean
-    public EditProductoUseCase editProdcutoUseCase() {
-        return new EditProductoUseCase();
+        return new DeleteProductoService(deleteProductoUseCase());
     }
 
     @Bean
-    public EditProductoService editProdcutoService() {
-        return new EditProductoService(editProdcutoUseCase());
+    public EditProductoUseCase editProductoUseCase() {
+        return new EditProductoUseCase(productoRepository);
+    }
+
+    @Bean
+    public EditProductoService editProductoService() {
+        return new EditProductoService(editProductoUseCase());
     }
 }

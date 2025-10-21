@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+
 import org.springframework.stereotype.Repository;
+
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.Producto;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.repository.ProductoRepository;
 
@@ -32,7 +34,7 @@ public class ProductoRepositoryMockImpl implements ProductoRepository {
     }
 
     @Override
-    public void deteteById(Integer id) {
+    public void deleteById(Integer id) {
         productos.remove(id);
     }
 
