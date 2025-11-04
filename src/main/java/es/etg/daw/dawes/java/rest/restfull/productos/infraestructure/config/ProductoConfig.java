@@ -3,14 +3,14 @@ package es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import es.etg.daw.dawes.java.rest.restfull.productos.application.services.CreateProductoService;
-import es.etg.daw.dawes.java.rest.restfull.productos.application.services.DeleteProductoService;
-import es.etg.daw.dawes.java.rest.restfull.productos.application.services.EditProductoService;
-import es.etg.daw.dawes.java.rest.restfull.productos.application.services.FindProductoService;
-import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.CreateProductoUseCase;
-import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.DeleteProductoUseCase;
-import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.EditProductoUseCase;
-import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.FindProductoUseCase;
+import es.etg.daw.dawes.java.rest.restfull.productos.application.services.producto.CreateProductoService;
+import es.etg.daw.dawes.java.rest.restfull.productos.application.services.producto.DeleteProductoService;
+import es.etg.daw.dawes.java.rest.restfull.productos.application.services.producto.EditProductoService;
+import es.etg.daw.dawes.java.rest.restfull.productos.application.services.producto.FindProductoService;
+import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.producto.CreateProductoUseCase;
+import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.producto.DeleteProductoUseCase;
+import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.producto.EditProductoUseCase;
+import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.producto.FindProductoUseCase;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.repository.ProductoRepository;
 import lombok.RequiredArgsConstructor;
 
