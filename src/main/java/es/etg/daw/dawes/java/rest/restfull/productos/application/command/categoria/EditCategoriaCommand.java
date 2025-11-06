@@ -13,5 +13,4 @@ public class EditCategoriaCommand {
 
     private CategoriaId id; //Lo cambiamos
     private String nombre;
-    private double precio;
 }

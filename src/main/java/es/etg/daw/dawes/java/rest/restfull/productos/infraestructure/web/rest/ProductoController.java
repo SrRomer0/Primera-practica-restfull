@@ -28,8 +28,8 @@ import es.etg.daw.dawes.java.rest.restfull.productos.application.services.produc
 import es.etg.daw.dawes.java.rest.restfull.productos.application.services.producto.FindProductoService;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.Producto;
 import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.mapper.ProductoMapper;
-import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.ProductoRequest;
-import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.ProductoResponse;
+import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.producto.ProductoRequest;
+import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.producto.ProductoResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 

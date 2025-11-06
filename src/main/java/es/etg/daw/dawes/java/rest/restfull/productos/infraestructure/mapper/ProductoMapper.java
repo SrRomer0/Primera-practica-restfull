@@ -4,8 +4,9 @@ import es.etg.daw.dawes.java.rest.restfull.common.domain.model.ProductoId;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.command.producto.CreateProductoCommand;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.command.producto.EditProductoCommand;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.Producto;
-import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.ProductoRequest;
-import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.ProductoResponse;
+import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.producto.ProductoRequest;
+import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.producto.ProductoResponse;
+//Clase encargada de mapear entre las diferentes capas (DTOs, Commands, Domain Models)
 
 public class ProductoMapper {
 
