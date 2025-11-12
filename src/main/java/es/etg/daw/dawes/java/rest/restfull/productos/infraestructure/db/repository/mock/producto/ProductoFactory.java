@@ -20,4 +20,8 @@ public class ProductoFactory {
 
         return datos;
     }
+
+    public static Producto create() {
+        return new Producto(new ProductoId(5), "Nombre producto nuevo", 9.99, LocalDateTime.now(), new CategoriaId(1));
+    }
 }

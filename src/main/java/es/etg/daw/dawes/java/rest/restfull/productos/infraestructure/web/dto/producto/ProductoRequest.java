@@ -1,5 +1,6 @@
 package es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.producto;
 
+import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.Producto;
 import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.validation.NombradoProducto;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -14,5 +15,8 @@ public record ProductoRequest(
                     double precio,
                     int categoriaId) {
 
+    public ProductoRequest(Producto p){
+        this(p.getNombre(), p.getPrecio(), p.getCategoria().getValue());
+    }
     
 }
