@@ -19,7 +19,7 @@ public class CategoriaFactory {
     }
 
     public static Categoria create() {
-        return new Categoria(new CategoriaId(3), "Nombre categoria nueva", LocalDateTime.now());
+        return new Categoria(new CategoriaId(3), "harinas", LocalDateTime.now());
     }
     
 }
