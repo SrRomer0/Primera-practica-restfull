@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.etg.daw.dawes.java.rest.restfull.common.domain.model.ProductoId;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.command.producto.CreateProductoCommand;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.command.producto.EditProductoCommand;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.services.producto.CreateProductoService;
@@ -27,6 +26,7 @@ import es.etg.daw.dawes.java.rest.restfull.productos.application.services.produc
 import es.etg.daw.dawes.java.rest.restfull.productos.application.services.producto.EditProductoService;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.services.producto.FindProductoService;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.Producto;
+import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.ProductoId;
 import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.mapper.ProductoMapper;
 import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.producto.ProductoRequest;
 import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.producto.ProductoResponse;

@@ -7,8 +7,9 @@ import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
-import es.etg.daw.dawes.java.rest.restfull.common.domain.model.CategoriaId;
+
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.Categoria;
+import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.CategoriaId;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.repository.CategoriaRepository;
 
 @Repository
@@ -53,6 +54,12 @@ public class CategoriaRepositoryMockImpl implements CategoriaRepository{
     @Override
     public void deleteById(CategoriaId id) {
         categorias.remove(id);
+    }
+
+    @Override
+    public Optional<Categoria> getByName(String name) {
+        // TODO Sin implementar
+        throw new UnsupportedOperationException("Unimplemented method 'getByName'");
     }
 
 }
