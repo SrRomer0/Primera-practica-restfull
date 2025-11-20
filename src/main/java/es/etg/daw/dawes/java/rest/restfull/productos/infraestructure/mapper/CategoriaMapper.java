@@ -31,20 +31,17 @@ public class CategoriaMapper {
 
     public static CategoriaEntity toEntity(Categoria p){
 
-        
         CategoriaId id = p.getId();
         return CategoriaEntity.builder().id(id!=null?id.getValue():null)
-                                        .nombre(p.getNombre())
-                                       .fechaCreacion(p.getCreatedAt())
-                                       .build();
+                                    .nombre(p.getNombre())
+                                    .build();
 
     }
 
     public static Categoria toDomain(CategoriaEntity p){
         return Categoria.builder().id(new CategoriaId(p.getId()))
-                                 .nombre(p.getNombre())
-                                 .createdAt(p.getFechaCreacion())
-                                 .build();
+                                .nombre(p.getNombre())
+                                .build();
 
     }
 

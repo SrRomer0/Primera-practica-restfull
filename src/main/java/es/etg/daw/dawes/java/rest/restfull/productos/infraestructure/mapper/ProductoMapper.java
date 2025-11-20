@@ -23,7 +23,7 @@ public class ProductoMapper {
 
     public static EditProductoCommand toCommand(int id, ProductoRequest productoRequest){
         //pasamos del int a ProductoId
-        return new EditProductoCommand(new ProductoId(id), productoRequest.nombre(), productoRequest.precio(), new CategoriaId(productoRequest.categoriaId()));
+        return new EditProductoCommand(new ProductoId(id), productoRequest.nombre(), productoRequest.precio());
     }
 
     public static ProductoResponse toResponse(Producto producto){
@@ -34,7 +34,7 @@ public class ProductoMapper {
                                     producto.getCategoria().getValue());//Agregamos la categoria.
     }
 
-     public static ProductoEntity toEntity(Producto p){
+    public static ProductoEntity toEntity(Producto p){
 
         // Defino la categoría
         CategoriaEntity cat = new CategoriaEntity();
@@ -42,20 +42,20 @@ public class ProductoMapper {
         ProductoId id = p.getId();
         return ProductoEntity.builder().id(id!=null?id.getValue():null)
                                         .nombre(p.getNombre())
-                                       .precio(new BigDecimal(p.getPrecio()))
-                                       .fechaCreacion(p.getCreatedAt())
-                                       .categoria(cat)
-                                       .build();
+                                    .precio(new BigDecimal(p.getPrecio()))
+                                    .fechaCreacion(p.getCreatedAt())
+                                    .categoria(cat)
+                                    .build();
 
     }
 
     public static Producto toDomain(ProductoEntity p){
         return Producto.builder().id(new ProductoId(p.getId()))
-                                 .nombre(p.getNombre())
-                                 .precio(p.getPrecio().doubleValue())
-                                 .createdAt(p.getFechaCreacion())
-                                 .categoria(new CategoriaId(p.getCategoria().getId()))
-                                 .build();
+                                .nombre(p.getNombre())
+                                .precio(p.getPrecio().doubleValue())
+                                .createdAt(p.getFechaCreacion())
+                                .categoria(new CategoriaId(p.getCategoria().getId()))
+                                .build();
 
     }
 

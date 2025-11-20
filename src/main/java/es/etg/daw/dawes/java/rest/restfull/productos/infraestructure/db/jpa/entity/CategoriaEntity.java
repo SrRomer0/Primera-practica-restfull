@@ -32,9 +32,6 @@ public class CategoriaEntity {
     @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
-    @Column(name = "fecha_creacion", nullable = false)
-    private LocalDateTime fechaCreacion;
-
     // Relación One-to-Many: Lado no propietario
     // Mapeada por el campo "categoria" en la entidad Producto.
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -45,13 +42,12 @@ public class CategoriaEntity {
     public CategoriaEntity() {
     }
 
-    public CategoriaEntity(Integer id, String nombre, LocalDateTime fechaCreacion) {
+    public CategoriaEntity(Integer id, String nombre) {
         this.id = id;
         this.nombre = nombre;
-        this.fechaCreacion = fechaCreacion;
     }
 
-    //Métodos auxiliares para sincronizra productos y categorias
+    //Métodos auxiliares para sincronizar productos y categorias
     public void addProducto(ProductoEntity producto) {
         this.productos.add(producto);
         producto.setCategoria(this); // Sincroniza el lado Producto

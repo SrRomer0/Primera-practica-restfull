@@ -21,9 +21,7 @@ public class CreateProductoUseCase {
                 .categoria(comando.categoriaId())
                 .createdAt(LocalDateTime.now()).build();
 
-        productoRepository.save(producto);
-        // TODO Faltaría la lógica sobre el producto, por ejemplo, almacenarlo en una base de datos.
-        return producto;
-
+        return productoRepository.save(producto);
+        
     }
 }

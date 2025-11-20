@@ -18,9 +18,7 @@ public class CreateCategoriaUseCase {
                 .nombre(comando.nombre())
                 .createdAt(LocalDateTime.now()).build();
 
-        categoriaRepository.save(categoria);
-        // TODO Faltaría la lógica sobre el producto, por ejemplo, almacenarlo en una base de datos.
-        return categoria;
+        return categoriaRepository.save(categoria);
 
     }
 }

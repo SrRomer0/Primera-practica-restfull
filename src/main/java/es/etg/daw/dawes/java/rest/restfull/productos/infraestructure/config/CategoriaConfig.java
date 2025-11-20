@@ -12,17 +12,25 @@ import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.categor
 import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.categoria.EditCategoriaUseCase;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.categoria.FindCategoriaUseCase;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.repository.CategoriaRepository;
+import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.db.jpa.repository.CategoriaJpaRepositoryImp;
+import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.db.jpa.repository.CategoriaRepositoryJpa;
 import lombok.RequiredArgsConstructor;
 
 @Configuration
 @RequiredArgsConstructor
 public class CategoriaConfig {
     
-    private final CategoriaRepository categoriaRepository;
+    private final CategoriaRepositoryJpa categoriaRepository;
+
+     // Creo por configuración la instalacia que me interesa del productoRepository (desde jpa)
+    @Bean
+    public  CategoriaRepository categoriaRepository(){
+        return new CategoriaJpaRepositoryImp(categoriaRepository);
+    }
 
     @Bean
     public CreateCategoriaUseCase createCategoriaUseCase() {
-        return new CreateCategoriaUseCase(categoriaRepository);
+        return new CreateCategoriaUseCase(categoriaRepository());
     }
 
     @Bean
@@ -32,7 +40,7 @@ public class CategoriaConfig {
 
     @Bean
     public FindCategoriaUseCase findCategoriaUseCase(){
-        return new FindCategoriaUseCase(categoriaRepository);
+        return new FindCategoriaUseCase(categoriaRepository());
     }
 
     @Bean
@@ -42,7 +50,7 @@ public class CategoriaConfig {
 
     @Bean
     public DeleteCategoriaUseCase deleteCategoriaUseCase(){
-        return new DeleteCategoriaUseCase(categoriaRepository);
+        return new DeleteCategoriaUseCase(categoriaRepository());
     }
     @Bean
     public DeleteCategoriaService deleteCategoriaService(){
@@ -51,7 +59,7 @@ public class CategoriaConfig {
 
     @Bean
     public EditCategoriaUseCase editCategoriaUseCase() {
-        return new EditCategoriaUseCase(categoriaRepository);
+        return new EditCategoriaUseCase(categoriaRepository());
     }
     
     @Bean

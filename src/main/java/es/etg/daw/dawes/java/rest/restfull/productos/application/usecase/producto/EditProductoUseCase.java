@@ -16,7 +16,6 @@ public class EditProductoUseCase {
                 .map(p -> { // Actualizamos los atributos del objeto
                     p.setNombre(command.nombre());
                     p.setPrecio(command.precio());
-                    p.setCategoria(command.categoriaId());
                     return productoRepository.save(p);
                 })
                 .orElseThrow(() -> new ProductoNotFoundException(command.id().getValue())); //Lo cambiamoss

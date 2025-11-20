@@ -18,8 +18,8 @@ public class CategoriaJpaRepositoryImp implements CategoriaRepository {
     @Override
     public Categoria save(Categoria t) {
 
-        CategoriaEntity prod = CategoriaMapper.toEntity(t);
-        return CategoriaMapper.toDomain(repository.save(prod));
+        CategoriaEntity cat = CategoriaMapper.toEntity(t);
+        return CategoriaMapper.toDomain(repository.save(cat));
     }
 
     @Override
@@ -30,12 +30,12 @@ public class CategoriaJpaRepositoryImp implements CategoriaRepository {
     @Override
     public Optional<Categoria> getById(CategoriaId id) {
         Optional<Categoria> Categoria = null;
-        Optional<CategoriaEntity> pe = repository.findById(id.getValue());
+        Optional<CategoriaEntity> ce = repository.findById(id.getValue());
 
-        if(pe.isEmpty()){
+        if(ce.isEmpty()){
             Categoria = Optional.empty();
         }else{
-            Categoria = Optional.of(CategoriaMapper.toDomain(pe.get()));
+            Categoria = Optional.of(CategoriaMapper.toDomain(ce.get()));
         }
 
         return Categoria;
@@ -48,9 +48,9 @@ public class CategoriaJpaRepositoryImp implements CategoriaRepository {
 
     @Override
     public Optional<Categoria> getByName(String name) {
-        CategoriaEntity prod = repository.findByNombre(name);
-        if(prod!=null)
-            return Optional.of(CategoriaMapper.toDomain(prod));
+        CategoriaEntity cat = repository.findByNombre(name);
+        if(cat!=null)
+            return Optional.of(CategoriaMapper.toDomain(cat));
         else
             return Optional.empty() ;
     }

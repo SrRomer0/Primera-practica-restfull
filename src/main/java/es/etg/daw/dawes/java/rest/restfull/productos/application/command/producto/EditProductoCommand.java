@@ -1,6 +1,5 @@
 package es.etg.daw.dawes.java.rest.restfull.productos.application.command.producto;
 
-import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.CategoriaId;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.ProductoId;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,5 +14,4 @@ public class EditProductoCommand {
     private ProductoId id; //Lo cambiamos
     private String nombre;
     private double precio;
-    private CategoriaId categoriaId;
 }
