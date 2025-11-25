@@ -16,7 +16,7 @@ import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.mapper.Cate
 
 
 @DataJpaTest(showSql = true)
-public class CartegoriaEntityJpaRepositoryTest {
+public class CategoriaEntityJpaRepositoryTest {
     
     @Autowired
     private CategoriaRepositoryJpa repository;
@@ -69,11 +69,11 @@ public class CartegoriaEntityJpaRepositoryTest {
     @Order(10)
     void update(){
         var nuevo = CategoriaMapper.toEntity(CategoriaFactory.create());
-        var producto = repository.save(nuevo);
+        var categoria = repository.save(nuevo);
 
                 assertAll(
-                () -> assertNotNull(producto),
-                () -> assertTrue(producto.getId()!=null)
+                () -> assertNotNull(categoria),
+                () -> assertTrue(categoria.getId()!=null)
         );
     }
 

@@ -29,16 +29,16 @@ public class CategoriaJpaRepositoryImp implements CategoriaRepository {
 
     @Override
     public Optional<Categoria> getById(CategoriaId id) {
-        Optional<Categoria> Categoria = null;
+        Optional<Categoria> categoria = null;
         Optional<CategoriaEntity> ce = repository.findById(id.getValue());
 
         if(ce.isEmpty()){
-            Categoria = Optional.empty();
+            categoria = Optional.empty();
         }else{
-            Categoria = Optional.of(CategoriaMapper.toDomain(ce.get()));
+            categoria = Optional.of(CategoriaMapper.toDomain(ce.get()));
         }
 
-        return Categoria;
+        return categoria;
     }
 
     @Override
