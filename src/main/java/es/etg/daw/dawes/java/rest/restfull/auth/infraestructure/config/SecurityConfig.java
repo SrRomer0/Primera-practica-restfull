@@ -52,12 +52,12 @@ public class SecurityConfig {
     //     return http.build();
     // }
     
-     @Bean
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
     
         http.authorizeHttpRequests((requests) -> requests
             .requestMatchers("/categorias/**").hasRole(Rol.ADMIN.name())
-            //.requestMatchers("/productos/**").hasAnyRole(Rol.USER.name(), Rol.ADMIN.name())
+            .requestMatchers("/productos/**").hasAnyRole(Rol.USER.name(), Rol.ADMIN.name())
             .requestMatchers(HttpMethod.GET, "/productos/**").hasAuthority(Permiso.ADMIN_READ.getPermiso())
             .anyRequest().authenticated());
         http.formLogin(withDefaults());
